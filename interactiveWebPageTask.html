@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="interactiveWebPageTask.css">
+    <title>Interactive Webpage</title>
+
+</head>
+
+<body>
+    <header>
+        <h1>Interactive Webpage</h1>
+    </header>
+
+    <main>
+        <div id="content">
+            <h2>Welcome to My Webpage!</h2>
+            <h3>DISCLAIMER!!!</h3>
+            <p>I used ChatGPT to code this web site</p>
+            <br>
+            <p id="sample-text">This is a sample paragraph. Click the button below to change its color.</p>
+            <button id="color-btn">Change Color</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Max</p>
+    </footer>
+
+    <script>
+        // JavaScript functionality
+        const colorButton = document.getElementById('color-btn');
+        const paragraph = document.getElementById('sample-text');
+
+        colorButton.addEventListener('click', () => {
+            paragraph.style.color = getRandomColor();
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+        }
+    </script>
+</body>
+
+</html>
